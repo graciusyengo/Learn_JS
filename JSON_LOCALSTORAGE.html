@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ 
+    <script>
+    
+      const product={
+        name:'sock',
+        price:23,
+        'delivery-time':'1 day',
+        rating:{
+          'start':4.5,
+          'count':87
+        },
+        fun: function tryFunction(){
+          console.log("je suis une function")
+        }
+      }
+     /* JSON */
+      product.newProperty=false
+   
+      delete product.newProperty
+      console.log(product)
+           /* stringify convertis un objet js AU FORMAT JSON*/
+     const JsonProducts=JSON.stringify(product)
+     console.log(JsonProducts)
+
+        /* parse convertis JSON js A UN OBJET JS*/
+    console.log(JSON.parse(JsonProducts)) 
+
+    /*lOCALSTORAGE*/
+    /* localStorage support que le string d'ou il faut convertir n'importe quel type avec JSON.stringify() */
+
+    console.log(localStorage.getItem('score'))
+    localStorage.setItem('score',JSON.stringify(product))
+ 
+    console.log(localStorage.getItem('message'))
+  
+
+ 
+       
+
+    </script>
+</body>
+</html>
